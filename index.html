@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About Me</title>
+
+<style>
+
+	@font-face{
+		font-family:'Bebas-Neue';
+		src: url('Bebas-Neue-Regular.ttf') format('truetype');
+	}
+	
+
+  body {
+    background: #e9eef2; 
+    margin: 0;
+    padding: 20px 0;
+  }
+h1 {
+  font-family: 'Bebas-Neue';
+  font-size: 40px;
+}
+  
+  .page-block {
+    background: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+  }
+
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .description {
+    flex: 1;
+  }
+
+  .description p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 0;
+  }
+
+  .picture {
+    flex-shrink: 0;
+    text-align: right;
+	margin-top: -70px;
+  }
+
+  .picture img {
+    width: 250px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background: #fff;
+  }
+
+  @media (max-width: 600px) {
+    .content { flex-direction: column; }
+    .picture { text-align: center; }
+  }
+	
+.tools {
+  margin-bottom: 15px;
+}
+
+.tools button {
+  padding: 6px 12px;
+  margin-right: 6px;
+  cursor: pointer;
+}
+	
+</style>
+</head>
+<body>
+
+<div class="page-block">
+	
+<div class="tools">
+  <button id="sizeUp">A+</button>
+  <button id="sizeDown">A−</button>
+</div>
+	
+  <h1>About Me</h1>
+
+  <div class="content">
+    <div class="description">
+      <p>
+        I'm 20 years old, and I'm starting out on a path toward becoming a tattoo artist. Right now I'm in the early stages of learning the craft, focusing on designing tattoos and developing my own style. Every sketch is a chance to practice line work, composition, and how a design will look on skin. I'm excited about the idea of creating art that people wear with them for life. Tattooing combines drawing, storytelling, and working closely with people, and I want to get better at all of it. My goal is to build a solid foundation in design now so I'm ready to start tattooing professionally in the future.
+      </p>
+    </div>
+
+    <div class="picture">
+    <img src="selfimage.jpg" width="2160" height="2880" alt=""/> 
+	 </div>
+
+</div>
+</div>
+	
+<script>
+  var fontSize = 100;
+
+  document.getElementById('sizeUp').addEventListener('click', function () {
+    if (fontSize < 200) {
+      fontSize += 10;
+      document.querySelectorAll('.description p').forEach(function (p) {
+        p.style.fontSize = fontSize + '%';
+      });
+    }
+  });
+
+  document.getElementById('sizeDown').addEventListener('click', function () {
+    if (fontSize > 60) {
+      fontSize -= 10;
+      document.querySelectorAll('.description p').forEach(function (p) {
+        p.style.fontSize = fontSize + '%';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
